@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* ==========================
+   GLOBAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --gold:#E7C84D;
+    --white:#ffffff;
+    --black:#000000;
+    --gray:#d7d7d7;
+
+    --font-title:'Playfair Display',serif;
+    --font-text:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:var(--font-text);
+    overflow-x:hidden;
+}
+
+/* ==========================
+NAVBAR
+========================== */
+
+nav{
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:45px 60px;
+}
+
+.logo{
+    font-size:30px;
+    font-family:var(--font-title);
+    color:var(--gold);
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:55px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:300;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+/* ==========================
+HOME
+========================== */
+
+.hero-section{
+    width:100%;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-bg-img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+/* Overlay gelap */
+
+.hero-section::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    pointer-events:none
+}
+
+/* Isi */
+
+.hero-content{
+    position:absolute;
+    z-index:10;
+    left:60px;
+    top:50%;
+    transform:translateY(-45%);
+    max-width:520px;
+}
+
+.hero-subtitle{
+    color:var(--gold);
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:28px;
+    font-weight:300;
+}
+
+.hero-title{
+    font-family:var(--font-title);
+    font-size:60px;
+    line-height:1.12;
+    margin-bottom:28px;
+    font-weight:700;
+}
+
+.hero-desc{
+    color:#efefef;
+    font-size:18px;
+    line-height:1.8;
+    font-weight:300;
+}
+
+/* efek sedikit zoom */
+
+.hero-bg-img{
+    animation:zoom 18s linear infinite alternate;
+}
+
+@keyframes zoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+
+}
+
+/* ==========================
+SECTION DEFAULT
+========================== */
+
+section{
+    width:100%;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+/* ===================================
+   COLLECTION
+===================================*/
+
+.collection-section{
+    background:#000;
+    min-height:200vh;
+    padding:20px 55px 80px;
+    display: block;
+}
+
+.collection-header-title{
+    font-family:var(--font-title);
+    font-size:62px;
+    color:#fff;
+    margin-bottom:45px;
+    font-weight:700;
+    display: block;
+}
+
+.collection-container{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+    justify-content: left;
+}
+
+/* Featured */
+
+.collection-featured{
+    display:flex;
+    gap:10px;
+    width:50%;
+    justify-content: left;
+}
+.featured-text{
+    padding-top:10px;
+    justify-content: left;
+      padding-bottom:10px;
+}
+
+.featured-title{
+    font-family:var(--font-title);
+    font-size:46px;
+    line-height:1.15;
+    margin-bottom:18px;
+    justify-content: left;
+}
+
+.featured-desc{
+    font-size:17px;
+    line-height:1.9;
+    color:#d9d9d9;
+    text-align:justify
+}
+
+/* ==========================
+GRID
+========================== */
+
+.collection-grid{
+    width:56%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.collection-card{
+    background:#3d3d3d;
+    border-radius:0 0 18px 18px;
+    overflow:hidden;
+    transition:.35s;
+    cursor:pointer;
+}
+
+.collection-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.collection-card p{
+    color:#fff;
+    font-family:var(--font-title);
+    font-size:19px;
+    line-height:1.45;
+    padding:15px;
+    min-height:82px;
+}
+
+.collection-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+
+.collection-card:hover img{
+    transform:scale(1.05);
+    transition:.4s;
+}
+
+.collection-card img{
+    transition:.4s;
+}
+
+/* ===================================
+   SHOP
+===================================*/
+
+.shop-hero{
+    width:100%;
+    height:100vh;
+
+    background-image:url("../assets/baground index.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+.shop-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+}
+
+.shop-hero h1,
+.shop-hero button{
+    position:relative;
+    z-index:2;
+}
+
+.shop-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.shop-hero>*{
+    position:relative;
+    z-index:2;
+}
+
+.shop-hero-title{
+    font-family:var(--font-title);
+    font-size:64px;
+    color:#fff;
+    text-align:center;
+    margin-bottom:10px;
+    line-height:1.2;
+}
+
+.btn-shop{
+    padding:20px 20px;
+    border:none;
+    border-radius:40px;
+    background:var(--gold);
+    color:#000000;
+    font-size:24px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-shop:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(231,200,77,.35);
+}
+
+/* ===================================
+   FOOTER
+===================================*/
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+.footer-logo{
+    font-family:var(--font-title);
+    font-size:50px;
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.footer-subtitle{
+    color:#ddd;
+    font-size:22px;
+    margin-bottom:25px;
+    font-weight:300;
+}
+
+.footer-divider{
+    width:140px;
+    height:4px;
+    background:var(--gold);
+    margin:0 auto 25px;
+    border-radius:50px;
+}
+
+.footer-copy{
+    color:#bdbdbd;
+    font-size:16px;
+}
+
+/* ===================================
+   ANIMASI
+===================================*/
+
+.collection-card,
+.btn-shop,
+.nav-links a{
+    transition:.3s ease;
+}
+
+.logo{
+    transition:.3s;
+}
+
+.logo:hover{
+    transform:scale(1.03);
+}
+
+/* ===================================
+   RESPONSIVE TABLET
+===================================*/
+
+@media (max-width:1024px){
+
+nav{
+    padding:30px;
+}
+
+.hero-title{
+    font-size:46px;
+}
+
+.collection-container{
+    flex-direction:column;
+}
+
+.collection-featured{
+    width:100%;
+}
+
+.collection-grid{
+    width:100%;
+    grid-template-columns:repeat(2,1fr);
+}
+
+.shop-hero-title{
+    font-size:48px;
+}
+
+}
+
+/* ===================================
+   RESPONSIVE HP
+===================================*/
+
+@media (max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+.nav-links{
+    gap:20px;
+}
+
+.hero-content{
+    left:25px;
+    right:25px;
+    max-width:100%;
+}
+
+.hero-title{
+    font-size:38px;
+}
+
+.hero-desc{
+    font-size:16px;
+}
+
+.collection-section{
+    padding:90px 25px;
+}
+
+.collection-header-title{
+    font-size:42px;
+}
+
+.collection-featured{
+    flex-direction:column;
+}
+
+.featured-img-wrapper{
+    width:100%;
+    height:420px;
+}
+
+.featured-title{
+    font-size:36px;
+}
+
+.collection-grid{
+    grid-template-columns:1fr;
+}
+
+.shop-hero{
+    height:70vh;
+}
+
+.shop-hero-title{
+    font-size:36px;
+    padding:0 20px;
+}
+
+.btn-shop{
+    padding:15px 40px;
+    font-size:18px;
+}
+
+.footer-logo{
+    font-size:38px;
+}
+
+.footer-subtitle{
+    font-size:18px;
+}
+
+}
+
+/* ===================================
+   RESPONSIVE HP KECIL
+===================================*/
+
+@media (max-width:480px){
+
+.hero-title{
+    font-size:30px;
+}
+
+.hero-subtitle{
+    font-size:15px;
+}
+
+.collection-header-title{
+    font-size:34px;
+}
+
+.featured-title{
+    font-size:30px;
+}
+
+.shop-hero-title{
+    font-size:28px;
+}
+
+.btn-shop{
+    width:220px;
+}
+
+.footer-logo{
+    font-size:30px;
+}
+
+.footer-subtitle{
+    font-size:15px;
+}
+
+.footer-copy{
+    font-size:14px;
+}
+
+}
